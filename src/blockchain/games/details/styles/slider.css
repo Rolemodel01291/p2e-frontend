@@ -1,0 +1,22 @@
+.App {
+    font-family: sans-serif;
+    text-align: center;
+  }
+  
+  .container_image {
+    position: relative;
+    outline: none;
+  }
+  
+  .container_image button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+  
+  .container_image .image_item {
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+  

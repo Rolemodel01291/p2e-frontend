@@ -1,0 +1,16 @@
+.toppagead {
+  overflow-x: hidden;
+  background-color: #122958;
+  text-align: center;
+  height: 100px;
+}
+
+.banner_advertise_toppage {
+  max-width: 1370px;
+  margin: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  align-items: center;
+}

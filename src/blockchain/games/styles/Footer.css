@@ -1,0 +1,247 @@
+footer {
+  font-size: 14px;
+  width: 100%;
+  background-color: #fff;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  margin-top: 20px;
+  box-shadow: 0 -2px 2px 0 #dee2e6;
+}
+footer ul {
+  padding: 0;
+  margin: 0;
+}
+footer li {
+  list-style-type: none;
+}
+footer li,
+footer span,
+footer a,
+footer li:hover,
+footer span:hover,
+footer a:hover {
+  font-size: 13px;
+  color: #424242;
+  font-weight: 600;
+}
+footer .social_media {
+  text-align: right;
+  padding-right: 15px;
+}
+footer .social_media li {
+  display: inline-block;
+  padding-right: 5px;
+}
+footer .social_media li:last-of-type {
+  display: inline-block;
+  padding-right: 0;
+}
+footer .social_media img {
+  height: 36px;
+  width: auto;
+}
+footer .menu li span,
+footer .menu li a {
+  font-size: 13px;
+  font-weight: 600;
+}
+footer a:focus {
+  color: #424242;
+  outline: none !important;
+}
+.footerinner {
+  margin: 0 auto;
+}
+.footerinner > div > div:first-of-type > ul:first-of-type {
+  padding-left: 15px;
+}
+.footerinner:first-of-type > div > div:first-of-type > ul:first-of-type {
+  margin-top: 5px;
+}
+.footerinner .menu {
+  text-align: right;
+  padding-right: 15px;
+  padding-top: 17px;
+}
+.footerinner .menu .modal {
+  text-align: initial;
+}
+.footerinner .menu > li {
+  padding: 0 2px;
+  display: inline-block;
+}
+.footerinner .menu > li > span > a,
+.footerinner .menu > li > button {
+  font-size: 16px;
+}
+.footerinner .cutterline {
+  font-size: 11px;
+  top: -1px;
+  position: relative;
+}
+#footer > .footerinner:first-of-type {
+  padding-top: 15px;
+}
+#footer > .footerinner:last-of-type {
+  margin-bottom: 15px;
+}
+#footer > .footerinner:last-of-type > .row > div:first-of-type {
+  padding-top: 3px;
+}
+.contactbutton,
+.disclaimerbutton,
+.newsletterbutton {
+  background-color: transparent;
+  border-width: 0;
+  padding: 0;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: #424242;
+}
+.contactbutton:focus,
+.disclaimerbutton:focus,
+.newsletterbutton:focus {
+  outline: none !important;
+}
+.g-recaptcha-div {
+  position: absolute;
+  right: 15px;
+}
+.last_add a,
+.last_add a:hover {
+  color: #3f88c7;
+}
+#newsletterModal form {
+  display: block;
+}
+#newsletterModal form label {
+  display: block;
+  text-align: left !important;
+}
+#footer .navbar-brand {
+  margin: 0;
+}
+#footer .alert {
+  display: none;
+}
+.modal-footer-recaptcha {
+  margin-top: 75px;
+}
+.modal-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+.footerhr {
+  box-shadow: 0 -2px 2px 0 #dee2e6;
+  border-top: 1px solid rgb(255 255 255);
+}
+.socialimgfooter {
+  background-size: 192px !important;
+  vertical-align: middle;
+  display: inline-block;
+  width: 27px;
+  height: 27px;
+}
+.socialimgfooter.loaded {
+  /* background-image: url(/img/general/social/social.png); */
+}
+.twitter.socialimgfooter {
+  background-position: -50px -94px;
+}
+.discord.socialimgfooter {
+  background-position: -51px -34px;
+}
+.telegram.socialimgfooter {
+  background-position: -8px -94px;
+}
+.youtube.socialimgfooter {
+  background-position: -92px -4px;
+}
+.medium.socialimgfooter {
+  background-position: -92px -64px;
+}
+.googleplay.socialimgfooter {
+  background-position: -6px -99px;
+  background-size: 152px !important;
+}
+.appstore.socialimgfooter {
+  background-position: -92px -64px;
+}
+.night-mode footer {
+  box-shadow: 0 -2px 2px 0 #313131 !important;
+  background-color: #212121;
+}
+.night-mode .footerhr {
+  box-shadow: 0 -2px 2px 0 #313131 !important;
+  background-color: #212121;
+  border-top: 1px solid #212121;
+}
+.night-mode .footerinner .menu > li,
+.night-mode .footerinner .menu > li > span,
+.night-mode .footerinner .menu > li > span > a,
+.night-mode .footerinner .menu > li:hover,
+.night-mode .footerinner .menu > li > span:hover,
+.night-mode .footerinner .menu > li > span > a:hover {
+  color: #c7c7c7;
+}
+.night-mode footer li,
+.night-mode footer .last_add {
+  color: #c7c7c7;
+}
+.night-mode footer a:focus,
+.night-mode footer .last_add a,
+.night-mode footer .newsletterbutton,
+.night-mode footer .disclaimerbutton,
+.night-mode footer .contactbutton {
+  color: #c7c7c7;
+}
+@media (max-width: 991px) {
+  .footerinner {
+    margin: 0;
+    padding: 0;
+  }
+  .footerinner > .row {
+    margin: 0;
+  }
+  footer .social_media,
+  .footerinner .menu {
+    text-align: left;
+    padding-left: 15px;
+  }
+  .footerinner .menu > li {
+    display: block;
+  }
+  .cutterline {
+    display: none !important;
+  }
+  .footer_desktoponly {
+    display: none;
+  }
+}
+@media (min-width: 992px) {
+  .footer_mobileonly {
+    display: none;
+  }
+}
+@media (min-width: 992px) and (max-width: 1399px) {
+  .footerinner,
+  .footerinner > .row {
+    width: 100%;
+  }
+  #footer > .footerinner {
+    padding-left: 15px;
+  }
+}
+@media (min-width: 1400px) {
+  .footerinner {
+    width: 1370px;
+  }
+}
+@media (max-width: 1439px) {
+  .footerinner .menu,
+  footer .social_media {
+    padding-right: 30px !important;
+  }
+}

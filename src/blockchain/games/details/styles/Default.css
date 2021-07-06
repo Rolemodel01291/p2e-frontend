@@ -1,0 +1,220 @@
+.fa,
+.fab,
+.fal,
+.far,
+.fas {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
+.fa-balance-scale:before {
+  content: "\f24e";
+}
+.fa-box:before {
+  content: "\f466";
+}
+.fa-coins:before {
+  content: "\f51e";
+}
+.fa-comment-dots:before {
+  content: "\f4ad";
+}
+.fa-exchange-alt:before {
+  content: "\f362";
+}
+.fa-video:before {
+  content: "\f03d";
+}
+.fa-user-friends:before {
+  content: "\f500";
+}
+.fa-external-link-alt:before {
+  content: "\f35d";
+}
+.fa-language:before {
+  content: "\f1ab";
+}
+.fa-check:before {
+  content: "\f00c";
+}
+.fa-sort-down:before {
+  content: "\f0dd";
+}
+.fa-bars:before {
+  content: "\f0c9";
+}
+.fa-bullhorn:before {
+  content: "\f0a1";
+}
+.fa-comments-dollar:before {
+  content: "\f653";
+}
+.fa-gamepad:before {
+  content: "\f11b";
+}
+.fa-hand-holding-usd:before {
+  content: "\f4c0";
+}
+.fa-info:before {
+  content: "\f129";
+}
+.fa-poll:before {
+  content: "\f681";
+}
+.fa-trophy:before {
+  content: "\f091";
+}
+.fa-arrow-alt-circle-right:before {
+  content: "\f35a";
+}
+.fa-layer-group:before {
+  content: "\f5fd";
+}
+.fa-moon:before {
+  content: "\f186";
+}
+.fa-plug:before {
+  content: "\f1e6";
+}
+.fa-puzzle-piece:before {
+  content: "\f12e";
+}
+.fa-question-circle:before {
+  content: "\f059";
+}
+.fa-search:before {
+  content: "\f002";
+}
+.fa-share-square:before {
+  content: "\f14d";
+}
+.fa-signal:before {
+  content: "\f012";
+}
+.fa-globe-americas:before {
+  content: "\f57d";
+}
+.fa-globe-asia:before {
+  content: "\f57e";
+}
+.fa-globe-europe:before {
+  content: "\f7a2";
+}
+.fa-youtube:before {
+  content: "\f167";
+}
+.fa-plus:before {
+  content: "\f067";
+}
+.fa-book:before {
+  content: "\f02d";
+}
+.fa-calendar-alt:before {
+  content: "\f073";
+}
+.fa-clock:before {
+  content: "\f017";
+}
+.fa-sort:before {
+  content: "\f0dc";
+}
+.fa-sort-up:before {
+  content: "\f0de";
+}
+.fa-sort-numeric-up:before {
+  content: "\f163";
+}
+.fa-sort-numeric-down:before {
+  content: "\f162";
+}
+.fa-star:before {
+  content: "\f005";
+}
+.fa-award:before {
+  content: "\f559";
+}
+.fa-chart-line:before {
+  content: "\f201";
+}
+.fa-chart-pie:before {
+  content: "\f200";
+}
+.fa-newspaper:before {
+  content: "\f1ea";
+}
+.fa-times:before {
+  content: "\f00d";
+}
+.fa-users:before {
+  content: "\f0c0";
+}
+.fa-chevron-circle-left:before {
+  content: "\f137";
+}
+.fa-fire-alt:before {
+  content: "\f7e4";
+}
+.fa-edit:before {
+  content: "\f044";
+}
+.fa-vr-cardboard:before {
+  content: "\f729";
+}
+.fa-moon:before {
+  content: "\f186";
+}
+.fa-trash:before {
+  content: "\f1f8";
+}
+.fa-sun:before {
+  content: "\f185";
+}
+.fa-chevron-up:before {
+  content: "\f077";
+}
+.fa-random:before {
+  content: "\f074";
+}
+.fa-warehouse:before {
+  content: "\f494";
+}
+@font-face {
+  font-family: "Font Awesome 5 Brands";
+  font-style: normal;
+  font-weight: 400;
+  font-display: auto;
+  src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff2)
+    format("woff2");
+}
+.fab {
+  font-family: "Font Awesome 5 Brands";
+}
+@font-face {
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-weight: 400;
+  font-display: auto;
+  src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-regular-400.woff2)
+    format("woff2");
+}
+.far {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: auto;
+  src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-solid-900.woff2)
+    format("woff2");
+}
+.fa,
+.fas {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
