@@ -39,13 +39,12 @@ const Categories = ({ categories }) => {
       {categories &&
         categories.length > 0 &&
         JSON.parse(categories).map((category, index) => (
-          <a
-            href="javascript:void(0)"
+          <span
             key={index}
             onClick={() => handleChange(category, "category")}
           >
             {category}
-          </a>
+          </span>
         ))}
     </div>
   );

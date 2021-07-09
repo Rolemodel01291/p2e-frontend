@@ -111,22 +111,35 @@ const Detail = ({ detail }) => {
                         title="Social Score is a new metric that reflects the popularity of the crypto community in a certain game. A game with a higher Social Score has captured more interest in the social network. (updates every 24h)"
                         placement="top"
                       >
-                      <i className="far fa-question-circle"></i>
+                        <i className="far fa-question-circle"></i>
                       </LightTooltip>
-                      <span className="socialscore_number">{ detail?.social_24h && detail?.social_24h.length > 0 && (JSON.parse(detail?.social_24h))?.score} </span>
+                      <span className="socialscore_number">
+                        {detail?.social_24h &&
+                          detail?.social_24h.length > 0 &&
+                          JSON.parse(detail?.social_24h)?.score}{" "}
+                      </span>
                       <span className="dailychangepercentage">
-                        (<span style={{ color: "#23d160" }}>{ detail?.social_24h && detail?.social_24h.length > 0 && (JSON.parse(detail?.social_24h))?.percent}</span>)
+                        (
+                        <span style={{ color: "#23d160" }}>
+                          {detail?.social_24h &&
+                            detail?.social_24h.length > 0 &&
+                            JSON.parse(detail?.social_24h)?.percent}
+                        </span>
+                        )
                       </span>
                     </div>
                   </div>
                   <hr />
-                  <ScoreCard p2e_score = {detail?.p2e_score} p2e_score_data= {detail?.p2e_score_data} updated_at={detail?.updated_at}/>
+                  <ScoreCard
+                    p2e_score={detail?.p2e_score}
+                    p2e_score_data={detail?.p2e_score_data}
+                    updated_at={detail?.updated_at}
+                  />
                   <hr />
-                  <NFTs supported_nfts = {detail?.supported_nfts}/>
-                  
+                  <NFTs supported_nfts={detail?.supported_nfts} />
+
                   <hr />
-                  <Token supported_token = {detail?.supported_tokens}/>
-                  
+                  <Token supported_token={detail?.supported_tokens} />
                 </div>
               </div>
               <div className="col-12 col-sm-12 col-md-3 col-lg-4">
@@ -134,11 +147,10 @@ const Detail = ({ detail }) => {
                 <div className="social">
                   <a
                     target="_blank"
-                    rel="nofollow noopener"
+                    rel="noreferrer"
                     href="https://blankos.com/?utm_source=PlayToEarn.net"
                     className="btn btn-outline-success"
                     data-nsfw-filter-status="swf"
-                    rel ="noreferrer"
                   >
                     <div
                       className="lazy socialimg website loaded"
@@ -147,11 +159,10 @@ const Detail = ({ detail }) => {
                   </a>
                   <a
                     target="_blank"
-                    rel="nofollow noopener"
+                    rel="noreferrer"
                     href="https://twitter.com/PlayBlankos"
                     className="btn btn-outline-success"
                     data-nsfw-filter-status="swf"
-                    rel ="noreferrer"
                   >
                     <div
                       className="lazy socialimg twitter loaded"
@@ -160,11 +171,10 @@ const Detail = ({ detail }) => {
                   </a>
                   <a
                     target="_blank"
-                    rel="nofollow noopener"
                     href="https://discord.com/invite/Qjd4Vj9"
                     className="btn btn-outline-success"
                     data-nsfw-filter-status="swf"
-                    rel ="noreferrer"
+                    rel="noreferrer"
                   >
                     <div
                       className="lazy socialimg discord loaded"
@@ -173,11 +183,10 @@ const Detail = ({ detail }) => {
                   </a>
                   <a
                     target="_blank"
-                    rel="nofollow noopener"
                     href="https://www.youtube.com/playblankos"
                     className="btn btn-outline-success"
                     data-nsfw-filter-status="swf"
-                    rel ="noreferrer"
+                    rel="noreferrer"
                   >
                     <div
                       className="lazy socialimg youtube loaded"
@@ -186,11 +195,10 @@ const Detail = ({ detail }) => {
                   </a>
                   <a
                     target="_blank"
-                    rel="nofollow noopener"
                     href="https://www.facebook.com/playblankos/"
                     className="btn btn-outline-success"
                     data-nsfw-filter-status="swf"
-                    rel ="noreferrer"
+                    rel="noreferrer"
                   >
                     <div
                       className="lazy socialimg facebook loaded"
@@ -199,11 +207,10 @@ const Detail = ({ detail }) => {
                   </a>
                   <a
                     target="_blank"
-                    rel="nofollow noopener"
                     href="https://www.instagram.com/playblankos/"
                     className="btn btn-outline-success"
                     data-nsfw-filter-status="swf"
-                    rel ="noreferrer"
+                    rel="noreferrer"
                   >
                     <div
                       className="lazy socialimg instagram loaded"
@@ -220,7 +227,7 @@ const Detail = ({ detail }) => {
                   <VideoDiv />
                 </div>
               </div>
-              <RelatedGamePanel related_game = {detail?.related_games} />
+              <RelatedGamePanel related_game={detail?.related_games} />
             </div>
           </div>
         </div>

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import _ from "lodash";
 import Dropdown from "./orderbar/dropdown/Dropdown";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
 
 import {
   fetchGamesFilter,

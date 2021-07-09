@@ -46,8 +46,8 @@ const Headline = ({ name, rank, updated, status }) => {
 
       <div className="updated">
         Updated: {updated}
-        <a
-          href="javascript:void(0)"
+        <span
+         
           className={`
                                 border-2
                                 border-${
@@ -88,7 +88,7 @@ const Headline = ({ name, rank, updated, status }) => {
         >
           {" "}
           {status}
-        </a>
+        </span>
       </div>
     </>
   );

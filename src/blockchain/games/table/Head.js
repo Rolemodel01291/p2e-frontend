@@ -67,8 +67,8 @@ const Head = ({ columns }) => {
               column?.name === "P2E" ||
               column?.name === "P2E Score" ||
               column?.name === "Social 24h" ? (
-                <a
-                  href="javascript:void(0)"
+                <span
+                  
                   data-nsfw-filter-status="swf"
                   value={column?.name}
                   onClick={() => sortItems(column?.name)}
@@ -83,7 +83,7 @@ const Head = ({ columns }) => {
                   ) : (
                     <i className="fa fa-sort"></i>
                   )}
-                </a>
+                </span>
               ) : column?.name === "Social 7d" ? (
                 <>
                   <LightTooltip

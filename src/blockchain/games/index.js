@@ -29,20 +29,7 @@ const Home = () => {
   const location = useLocation();
   const dispatch = useDispatch();
   const sortList = useSelector((state)=>state.games.sortList);
-  // let sortList = {
-  //   platform: "All-Blockchain",
-  //   category: "All-Genre",
-  //   device: "All-Device",
-  //   status: "All-Status",
-  //   nft: "All-NFT",
-  //   f2p: "All-FreeToPlay",
-  //   p2e: "All-PlayToEarn",
-  //   page: 1,
-  //   sort: 'total_rank',
-  //   direction: 'asc',
-  //   is_new : '',
-  //   keyword : ''
-  // };
+ 
 
   
 
@@ -51,7 +38,7 @@ const Home = () => {
     if (location.state !== "filter") {
       dispatch(fetchGamesFilter(sortList));
     }
-  }, [dispatch]);
+  }, [dispatch, location, sortList]);
 
   const [isMove, setIsMove] = useState(false);
 

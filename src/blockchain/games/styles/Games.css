@@ -1,3 +1,4 @@
+
 .table td {
   padding: 8px 10px;
   font-weight: 600;
@@ -18,6 +19,11 @@
 .table-bordered th {
   border: none;
 }
+
+span:hover{
+  cursor:pointer;
+}
+
 .orderbar {
   margin-top: 20px;
 }

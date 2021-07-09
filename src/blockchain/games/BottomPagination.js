@@ -3,12 +3,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import { useSelector,useDispatch } from 'react-redux';
 
 import {fetchGamesFilter} from "../games/gamesSlice";
-const useStyles = makeStyles((theme) => ({
-  container: {
-    color: theme.palette.primary.main,
-    textAlign: "center",
-  },
-}));
 
 
 const BottomPagination = () => {
@@ -29,21 +23,20 @@ const BottomPagination = () => {
   return (
     <div className="bottom-pagination">
       <ul className="pagination" role="navigation">
-        <li className={sortList.page == 1?"page-item disabled": "page-item"} aria-disabled="true">
-          <a href="javascript:void(0)" className="page-link" data-nsfw-filter-status="swf"  onClick={()=> handlePrevious()}>
+        <li className={sortList.page === 1?"page-item disabled": "page-item"}>
+          <span  className="page-link" data-nsfw-filter-status="swf"  onClick={()=> handlePrevious()}>
             « Previous 50
-          </a>
+          </span>
         </li>
         <li className= {sortList.page === Math.floor(total_count / 50) + 1 ?"page-item disabled": "page-item"}>
-          <a
+          <span
             className="page-link"
             rel="next"
-            href = "javascript:void(0)"
             data-nsfw-filter-status="swf"
             onClick = {() => handleNext()}
           >
             Next 50 »
-          </a>
+          </span>
         </li>
       </ul>
     </div>
