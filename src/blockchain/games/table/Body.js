@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import clsx from "clsx";
+import React from "react";
+
 import { Link } from "react-router-dom";
 import { withStyles, makeStyles } from "@material-ui/core/styles";
 import { TableCell, TableRow, Tooltip } from "@material-ui/core";
@@ -54,7 +54,7 @@ const Body = ({ rows }) => {
         return <TableRow key={row.id}>
          
           <TableCell component="th" scope="row" style={{padding : '0'}}>
-            {sortList.is_new === 1 && row.id != 13 ? <a className="new" href="#" data-nsfw-filter-status="swf">New!</a>:<></>}
+            {sortList.is_new === 1 && row.id !== 13 ? <a className="new" href="javascript:void(0)" data-nsfw-filter-status="swf">New!</a>:<></>}
             <div>{50 * (sortList.page - 1) + index + 1}</div>
             
           </TableCell>
@@ -90,7 +90,7 @@ const Body = ({ rows }) => {
             {row?.genres && row?.genres.length > 0 && (JSON.parse(row?.genres)).map((genre, index) => (
               <div key={index}>
                 <a
-                  href="#"
+                  href="javascript:void(0)"
                   className={`text-right font-bold text-xs uppercase block whitespace-nowrap no-underline ${styles.dapp_name}`}
                   onClick={() => handleChange(genre, "category")}
                 >
@@ -134,7 +134,7 @@ const Body = ({ rows }) => {
           <TableCell component="th" scope="row">
             <LightTooltip title={`${row?.status}`} placement="top">
               <a
-                href="#"
+                href="javascript:void(0)"
                 className={`
                                 border-2
                                 border-${
@@ -189,7 +189,7 @@ const Body = ({ rows }) => {
                 placement="top"
               >
                 <a
-                  href="#"
+                  href="javascript:void(0)"
                   className="font-bold px-2 py-0 mx-1 my-0 uppercase block text-center rounded border-2 text-white"
                   style={{
                     fontSize: "10px",
@@ -218,7 +218,7 @@ const Body = ({ rows }) => {
                 placement="top"
               >
                 <a
-                  href="#"
+                  href="javascript:void(0)"
                   className="font-bold px-2 py-0 mx-1 my-0 uppercase block text-center rounded border-2 text-white"
                   style={{
                     fontSize: "10px",
@@ -237,7 +237,7 @@ const Body = ({ rows }) => {
               <div className="border-1" key={index}>
                 <LightTooltip title={`${p2e} Play-To-Earn`} placement="top">
                   <a
-                    href="#"
+                    href="javascript:void(0)"
                     className="font-bold px-2 py-0 my-1 mx-0 uppercase block text-center rounded border-2 text-white"
                     style={{
                       fontSize: "10px",

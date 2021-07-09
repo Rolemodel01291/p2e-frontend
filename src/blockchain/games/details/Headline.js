@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { fetchGamesFilter } from "../gamesSlice";
 
@@ -47,7 +47,7 @@ const Headline = ({ name, rank, updated, status }) => {
       <div className="updated">
         Updated: {updated}
         <a
-          href="#"
+          href="javascript:void(0)"
           className={`
                                 border-2
                                 border-${

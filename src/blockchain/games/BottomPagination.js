@@ -35,7 +35,7 @@ const BottomPagination = () => {
             « Previous 50
           </a>
         </li>
-        <li class= {sortList.page == Math.floor(total_count / 50) + 1 ?"page-item disabled": "page-item"}>
+        <li className= {sortList.page == Math.floor(total_count / 50) + 1 ?"page-item disabled": "page-item"}>
           <a
             className="page-link"
             rel="next"

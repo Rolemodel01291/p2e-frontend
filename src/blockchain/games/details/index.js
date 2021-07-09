@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { useParams } from 'react-router-dom';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import {
@@ -29,7 +29,7 @@ const GameDetails = () => {
 
     useEffect(() => {
         dispatch(fetchDetailData(routeParams.id));	
-	}, [dispatch]);
+	}, [dispatch, routeParams]);
     
     return (
         <div className="details">

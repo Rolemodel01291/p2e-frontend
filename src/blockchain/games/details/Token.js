@@ -1,6 +1,5 @@
 import React from "react";
-import { Tooltip } from "@material-ui/core";
-import { withStyles } from "@material-ui/core/styles";
+
 
 const Token = ({ supported_token }) => {
   return (

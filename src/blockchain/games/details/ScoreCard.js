@@ -1,7 +1,7 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import { withStyles } from "@material-ui/core/styles";
-import { ListItemAvatar, Tooltip } from "@material-ui/core";
+import { Tooltip } from "@material-ui/core";
 import ReactHtmlParser from "react-html-parser";
 
 const LightTooltip = withStyles((theme) => ({

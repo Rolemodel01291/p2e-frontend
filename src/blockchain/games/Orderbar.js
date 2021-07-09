@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import _ from "lodash";
 import Dropdown from "./orderbar/dropdown/Dropdown";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 import {
-  fetchNewGameAsync,
-  fetchGamesRowsAsync,
   fetchGamesFilter,
 } from "./gamesSlice";
 import {
@@ -27,8 +25,6 @@ import "./styles/Games.css";
 
 const Orderbar = () => {
   const dispatch = useDispatch();
-  const history = useHistory();
-  const total_count = useSelector((state) => state.games.total_count);
   const sortList = useSelector((state) => state.games.sortList);
 
   const [searchQuery, setSearchQuery] = useState("");
@@ -164,7 +160,7 @@ const Orderbar = () => {
       <div className="dropdown search">
 
         <input placeholder="Search" autoComplete="off" value={searchQuery} className="form-control mr-sm-2 fulltextsearch" name="fulltextsearch" type="text" onChange={(e)=>setSearchQuery(e.target.value)}/>
-        <button className="search-button my-2 my-sm-0" aria-label="Search" onClick={()=>searchItem()}><i class="fas fa-search"></i></button>
+        <button className="search-button my-2 my-sm-0" aria-label="Search" onClick={()=>searchItem()}><i className="fas fa-search"></i></button>
 
       </div>
     </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { fetchGamesFilter } from "../gamesSlice";
 
@@ -40,7 +40,7 @@ const Categories = ({ categories }) => {
         categories.length > 0 &&
         JSON.parse(categories).map((category, index) => (
           <a
-            href="#"
+            href="javascript:void(0)"
             key={index}
             onClick={() => handleChange(category, "category")}
           >

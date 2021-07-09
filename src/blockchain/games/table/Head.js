@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { TableCell, Tooltip } from "@material-ui/core";
 import { useSelector, useDispatch } from "react-redux";
-import { withStyles, makeStyles } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 
 import { fetchGamesFilter } from "../gamesSlice";
 const LightTooltip = withStyles((theme) => ({
@@ -16,7 +16,6 @@ const LightTooltip = withStyles((theme) => ({
 
 const Head = ({ columns }) => {
   const dispatch = useDispatch();
-  const page = useSelector((state) => state.games.page);
   const sortList = useSelector((state) => state.games.sortList);
   
   const [clicked, setClicked] = useState(false);
@@ -69,13 +68,13 @@ const Head = ({ columns }) => {
               column?.name === "P2E Score" ||
               column?.name === "Social 24h" ? (
                 <a
-                  href="#"
+                  href="javascript:void(0)"
                   data-nsfw-filter-status="swf"
                   value={column?.name}
                   onClick={() => sortItems(column?.name)}
                 >
                   {column?.name}{" "}
-                  {selectedColumn != column?.name && sortList.direction === "asc" && !clicked ? (
+                  {selectedColumn !== column?.name && sortList.direction === "asc" && !clicked ? (
                     <i className="fa fa-sort"></i>
                   ) : selectedColumn === column?.name && sortList.direction === "asc" && clicked ? (
                     <i className="fa fa-sort-down"></i>

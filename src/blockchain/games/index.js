@@ -48,7 +48,7 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(fetchGamesAsync());
-    if (location.state != "filter") {
+    if (location.state !== "filter") {
       dispatch(fetchGamesFilter(sortList));
     }
   }, [dispatch]);

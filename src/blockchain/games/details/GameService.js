@@ -1,7 +1,7 @@
 import React from "react";
 import { Tooltip } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { fetchGamesFilter } from "../gamesSlice";
 
@@ -57,7 +57,7 @@ const GameService = ({ nft, p2e, f2p }) => {
               placement="top"
             >
               <a
-                href="#"
+                href="javascript:void(0)"
                 style={{
                   fontSize: "10px",
                   border: "1px solid #00000052",
@@ -86,7 +86,7 @@ const GameService = ({ nft, p2e, f2p }) => {
               placement="top"
             >
               <a
-                href="#"
+                href="javascript:void(0)"
                 style={{
                   fontSize: "10px",
                   border: "1px solid #00000052",
@@ -105,7 +105,7 @@ const GameService = ({ nft, p2e, f2p }) => {
             
               <LightTooltip title={`${p2e} Play-To-Earn`} placement="top">
                   <a
-                    href="#"
+                    href="javascript:void(0)"
                     style={{
                       fontSize: "10px",
                       border: "1px solid #00000052",

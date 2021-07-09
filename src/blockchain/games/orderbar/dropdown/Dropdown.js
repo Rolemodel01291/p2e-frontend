@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { withRouter } from "react-router";
-import { useHistory } from "react-router-dom";
+
 
 import { NativeSelect, withStyles } from "@material-ui/core";
-import { useDispatch, useSelector } from "react-redux";
 
-import { fetchGamesFilter } from "../../gamesSlice";
+
+
 
 const MyNativeSelect = withStyles({
   root: {
@@ -14,11 +14,8 @@ const MyNativeSelect = withStyles({
 })(NativeSelect);
 
 const Dropdown = ({ type, listName, match, state, onChange, selectedValue }) => {
-  const dispatch = useDispatch();
-  const { platform, category, status, device, nft, p2e, f2p } = match.params;
-  const history = useHistory();
-  const sortList = useSelector((state) => state.games.sortList);
   
+
   //dropdown list change
   const handleChange = (e) => {
     onChange({ ...state, [listName]: e.target.value, keyword: "", page: 1 });

@@ -1,13 +1,13 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import {
   fetchColumns,
-  fetchRows,
+  
   fetchDetails,
   fetchNewItems,
   fetchFilterGames,
-  fetchItemsSort,
+  
 } from "./gamesAPI";
-import GamesTable from "./GamesTable";
+
 
 export function fetchDetailData(id) {
   return async (dispatch) => {

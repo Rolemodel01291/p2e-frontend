@@ -138,6 +138,7 @@ const Detail = ({ detail }) => {
                     href="https://blankos.com/?utm_source=PlayToEarn.net"
                     className="btn btn-outline-success"
                     data-nsfw-filter-status="swf"
+                    rel ="noreferrer"
                   >
                     <div
                       className="lazy socialimg website loaded"
@@ -150,6 +151,7 @@ const Detail = ({ detail }) => {
                     href="https://twitter.com/PlayBlankos"
                     className="btn btn-outline-success"
                     data-nsfw-filter-status="swf"
+                    rel ="noreferrer"
                   >
                     <div
                       className="lazy socialimg twitter loaded"
@@ -162,6 +164,7 @@ const Detail = ({ detail }) => {
                     href="https://discord.com/invite/Qjd4Vj9"
                     className="btn btn-outline-success"
                     data-nsfw-filter-status="swf"
+                    rel ="noreferrer"
                   >
                     <div
                       className="lazy socialimg discord loaded"
@@ -174,6 +177,7 @@ const Detail = ({ detail }) => {
                     href="https://www.youtube.com/playblankos"
                     className="btn btn-outline-success"
                     data-nsfw-filter-status="swf"
+                    rel ="noreferrer"
                   >
                     <div
                       className="lazy socialimg youtube loaded"
@@ -186,6 +190,7 @@ const Detail = ({ detail }) => {
                     href="https://www.facebook.com/playblankos/"
                     className="btn btn-outline-success"
                     data-nsfw-filter-status="swf"
+                    rel ="noreferrer"
                   >
                     <div
                       className="lazy socialimg facebook loaded"
@@ -198,6 +203,7 @@ const Detail = ({ detail }) => {
                     href="https://www.instagram.com/playblankos/"
                     className="btn btn-outline-success"
                     data-nsfw-filter-status="swf"
+                    rel ="noreferrer"
                   >
                     <div
                       className="lazy socialimg instagram loaded"
