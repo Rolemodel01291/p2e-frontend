@@ -51,6 +51,60 @@ export const category = [
     "Virtual-World",
 ];
 
+export const categoryMatch = {
+    "All-Genre": "All-Genre",
+    "ACTION" : "Action",
+    "ADVENTURE": "Adventure",
+    "ARCADE": "Arcade",
+    "ART": "Art",
+    "AUGMENTED-REALITY": "Augmented-Reality",
+    "AUTO-BATTLER": "Auto-Battler",
+    "BATTLE-ROYALE": "Battle-Royale",
+    "BOARD": "Board",
+    "BRAWLER": "Brawler",
+    "BREEDING": "Breeding",
+    "BUILDING": "Building",
+    "CARD": "Card",
+    "CASUAL": "Casual",
+    "CITY-BUILDING": "City-Building",
+    "COLLECTIBLE": "Collectible",
+    "DEFI": "DeFi",
+    "DUNGEON": "Dungeon",
+    "EDUCATIONAL": "Educational",
+    "ESCAPE": "Escape",
+    "ESPORTS": "eSports",
+    "FANTASY": "Fantasy",
+    "FIGHTING": "Fighting",
+    "HORROR": "Horror",
+    "IDLE": "Idle",
+    "LOGIC": "Logic",
+    "MINIGAME": "Minigame",
+    "MINING": "Mining",
+    "MMO": "MMO",
+    "MMORPG": "MMORPG",
+    "MOBA": "MOBA",
+    "OPEN-WORLD": "Open-World",
+    "PARTY": "Party",
+    "PLATFORMER": "Platformer",
+    "PUZZLE": "Puzzle",
+    "PVP": "PVP",
+    "RACING": "Racing",
+    "RPG": "RPG",
+    "SCI-FI": "Sci-Fi",
+    "SHOOTER": "Shooter",
+    "SIMULATION": "Simulation",
+    "SPACE": "Space",
+    "SPORTS": "Sports",
+    "STRATEGY": "Strategy",
+    "SURVIVAL": "Survival",
+    "TACTICAL": "Tactical",
+    "TOWER-DEFENSE": "Tower-Defense",
+    "TURN-BASED": "Turn-based",
+    "VERTUAL-REALITY": "Virtual-Reality",
+    "VERTUAL-WORLD": "Virtual-World",
+};
+
+
 export const platform = [
     'All-Blockchain',
     'Ethereum',
@@ -114,6 +168,12 @@ export const nft = [
     "No-NFT",
 ];
 
+export const nftMatch = {
+    "All-NFT": "All-NFT",
+    "YES": "Yes-NFT",
+    "NO": "No-NFT",
+};
+
 export const f2p = [
     "All-F2P",
     "Yes-F2P",
@@ -122,6 +182,14 @@ export const f2p = [
     "Game-F2P",
 ];
 
+export const f2pMatch = {
+    "All-FreeToPlay": "All-F2P",
+    "YES": "Yes-F2P",
+    "NFT": "NFT-F2P",
+    "CRYPTO": "Crypto-F2P",
+    "GAME": "Game-F2P"
+};
+
 export const p2e = [
     "All-P2E",
     "NFT-P2E",
@@ -129,3 +197,11 @@ export const p2e = [
     "Both-P2E",
     "No-P2E",
 ];
+
+export const p2eMatch = {
+    "All-PlayToEarn": "All-P2E",
+    "NFT": "NFT-P2E",
+    "CRYPTO": "Crypto-P2E",
+    "BOTH": "Both-P2E",
+    "NO" : "No-P2E"
+}

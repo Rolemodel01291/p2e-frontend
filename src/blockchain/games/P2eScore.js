@@ -1,56 +1,48 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
+import { withStyles } from "@material-ui/core/styles";
+import { Tooltip } from "@material-ui/core";
 
-const ScoreCard = () => {
+const LightTooltip = withStyles((theme) => ({
+  tooltip: {
+    backgroundColor: "#3f88c7",
+    color: "#fff",
+    boxShadow: theme.shadows[1],
+    fontSize: 11,
+    textTransform: "capitalize",
+  },
+}))(Tooltip);
+const ScoreCard = ({ data }) => {
   return (
-    <div className="score" style={{width: '100px'}}>
+    <div className="score" style={{ width: "100px" }}>
       <div className="list-progress">
-        <div
-          data-toggle="tooltip"
-          data-placement="bottom"
-          title="Play-To-Earn: 4 out of 4"
-          className="progress-bar p2e_progress"
-          role="progressbar"
-          style={{ width: "40%" }}
-          aria-valuenow="40"
-          aria-valuemin="0"
-          aria-valuemax="100"
-        ></div>
-        <div
-          data-toggle="tooltip"
-          data-placement="bottom"
-          title="Free-To-Play: 2 out of 2"
-          className="progress-bar f2p_progress"
-          role="progressbar"
-          style={{ width: "20%" }}
-          aria-valuenow="20"
-          aria-valuemin="0"
-          aria-valuemax="100"
-        ></div>
-        <div
-          data-toggle="tooltip"
-          data-placement="bottom"
-          title="Pay-To-Win: 1 out of 2"
-          className="progress-bar p2w_progress"
-          role="progressbar"
-          style={{ width: "10%" }}
-          aria-valuenow="10"
-          aria-valuemin="0"
-          aria-valuemax="100"
-        ></div>
-        <div
-          data-toggle="tooltip"
-          data-placement="bottom"
-          title="Liquidity: 2 out of 2"
-          className="progress-bar liq_progress"
-          role="progressbar"
-          style={{ width: "20%" }}
-          aria-valuenow="20"
-          aria-valuemin="0"
-          aria-valuemax="100"
-        ></div>
+        {data.progresses.map((item) => (
+          <LightTooltip
+            title={item.tooltip}
+            placement="top"
+          >
+            <div
+              data-toggle="tooltip"
+              data-placement="bottom"
+              className={`${
+                item?.tooltip.split(":")[0] === "Play-To-Earn"
+                  ? "p2e_progress progress-bar"
+                  : item?.tooltip.split(":")[0] === "Free-To-Play"
+                  ? "f2p_progress progress-bar"
+                  : item?.tooltip.split(":")[0] === "Pay-To-Win"
+                  ? "p2w_progress progress-bar"
+                  : "liq_progress progress-bar"
+              }`}
+              role="progressbar"
+              style={{ width: `${item.value}%` }}
+              aria-valuenow={item.value}
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
+          </LightTooltip>
+        ))}
       </div>
-      <span data-nsfw-filter-status="swf">9</span>
+      <span data-nsfw-filter-status="swf">{data.total_score}</span>
     </div>
   );
 };

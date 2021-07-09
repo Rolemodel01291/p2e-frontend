@@ -34,11 +34,11 @@ function App() {
             <Switch>
               <Route exact path="/new-blockchaingames" component={Home} />
               <Route exact path="/blockchaingame/:id" component={Details} />
-              <Route
+              {/* <Route
                 exact
                 path="/blockchaingames/:platform/:category/:status/:device/:nft/:p2e/:f2p"
                 component={Home}
-              />
+              /> */}
               <Route exact path="/" component={Home} />
               <Route path="*">
                 <NoMatch />

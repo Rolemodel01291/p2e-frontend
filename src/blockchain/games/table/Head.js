@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { TableCell, Tooltip } from "@material-ui/core";
+import { useSelector, useDispatch } from "react-redux";
 import { withStyles, makeStyles } from "@material-ui/core/styles";
 
+import { fetchGamesFilter } from "../gamesSlice";
 const LightTooltip = withStyles((theme) => ({
   tooltip: {
     backgroundColor: "#3f88c7",
@@ -13,6 +15,39 @@ const LightTooltip = withStyles((theme) => ({
 }))(Tooltip);
 
 const Head = ({ columns }) => {
+  const dispatch = useDispatch();
+  const page = useSelector((state) => state.games.page);
+  const sortList = useSelector((state) => state.games.sortList);
+  
+  const [clicked, setClicked] = useState(false);
+  const [selectedColumn,setSelectedColumn] = useState("");
+  const sortItems = (sort) => {
+    setClicked(true);
+    setSelectedColumn(sort);
+    let direction = '';
+    if (sort === "P2E") sort = "p2e";
+    if (sort === "P2E Score") sort = "p2e_score";
+    if (sort === "Status") sort = "status";
+    if (sort === "Social 24h") sort = "social_24h";
+    if (sort === "Name") sort = "name";
+    if (sort === "NFT") sort = "nft";
+    if (sort === "F2P") sort = "f2p";
+    if (sortList.direction === "desc") direction = "asc";
+    if (sortList.direction === "asc") direction = "desc";
+    // direction === "desc"? "asc": "desc";
+    dispatch(
+      fetchGamesFilter({  
+        ...sortList,
+        sort: sort,
+        direction: direction,
+        page: 1,
+        keyword: ''
+      })
+    );
+    
+  };
+
+
   return (
     <>
       <TableCell>#</TableCell>
@@ -34,10 +69,21 @@ const Head = ({ columns }) => {
               column?.name === "P2E Score" ||
               column?.name === "Social 24h" ? (
                 <a
-                  href="https://playtoearn.net/blockchaingames?sort=status_id&amp;direction=desc"
+                  href="#"
                   data-nsfw-filter-status="swf"
+                  value={column?.name}
+                  onClick={() => sortItems(column?.name)}
                 >
-                  {column?.name} <i class="fa fa-sort"></i>
+                  {column?.name}{" "}
+                  {selectedColumn != column?.name && sortList.direction === "asc" && !clicked ? (
+                    <i className="fa fa-sort"></i>
+                  ) : selectedColumn === column?.name && sortList.direction === "asc" && clicked ? (
+                    <i className="fa fa-sort-down"></i>
+                  ) : selectedColumn === column?.name && sortList.direction === "desc" && clicked ? (
+                    <i className="fa fa-sort-up"></i>
+                  ) : (
+                    <i className="fa fa-sort"></i>
+                  )}
                 </a>
               ) : column?.name === "Social 7d" ? (
                 <>

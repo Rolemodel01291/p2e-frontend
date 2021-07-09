@@ -1,6 +1,6 @@
 import React from "react";
 
-const RelatedGamePanel = () => {
+const RelatedGamePanel = ({related_game}) => {
   return (
     <>
       <div>
@@ -9,20 +9,26 @@ const RelatedGamePanel = () => {
             Related Games:
           </p>
           <ul className="related_dapp">
+          {related_game &&
+          related_game.length > 0 &&
+          JSON.parse(related_game).map((related_game, index) => (
+            <>
             <li>
-              <a href="zed-run" data-nsfw-filter-status="swf">
+              <a href={related_game.link} data-nsfw-filter-status="swf">
                 <div className="related_dapp_img">
                   <img
                     loading="lazy"
-                    src="https://playtoearn.net/img/dapp/zed-run/profile_picture/100_zed-run.jpg"
-                    alt="Zed Run"
+                    src={related_game.image}
+                    alt={related_game.name}
                     data-nsfw-filter-status="sfw"
                     style={{ visibility: "visible" }}
                   />
-                  <span data-nsfw-filter-status="swf">Zed Run</span>
+                  <span data-nsfw-filter-status="swf">{related_game.name}</span>
                 </div>
               </a>
             </li>
+            </>
+          ))}
           </ul>
         </div>
       </div>

@@ -9,7 +9,6 @@ export default function api() {
 
     const BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
-    console.log("============", BASE_URL);
   
     return {
       post: async (path, body) => {

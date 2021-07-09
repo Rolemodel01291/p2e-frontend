@@ -1,82 +1,174 @@
-import React, { useEffect } from 'react';
-
-import Dropdown from './orderbar/dropdown/Dropdown';
-import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
-
+import React, { useEffect, useState } from "react";
+import _ from "lodash";
+import Dropdown from "./orderbar/dropdown/Dropdown";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 import {
-    fetchNewGameAsync,
-    fetchGamesRowsAsync
-} from './gamesSlice';
+  fetchNewGameAsync,
+  fetchGamesRowsAsync,
+  fetchGamesFilter,
+} from "./gamesSlice";
 import {
-    category,
-    platform,
-    device,
-    status,
-    nft,
-    f2p,
-    p2e,
-} from '../../data/orderList';
+  category,
+  platform,
+  device,
+  status,
+  nft,
+  f2p,
+  p2e,
+  categoryMatch,
+  nftMatch,
+  f2pMatch,
+  p2eMatch
+} from "../../data/orderList";
 
-import './styles/Games.css';
+import "./styles/Games.css";
 
 const Orderbar = () => {
-    const dispatch = useDispatch();
-    const history = useHistory();
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const total_count = useSelector((state) => state.games.total_count);
+  const sortList = useSelector((state) => state.games.sortList);
 
-    const dropdownTypes = [
-        { list: category, listName: "category" },
-        { list: platform, listName: "platform" },
-        { list: device, listName: "device" },
-        { list: status, listName: "status" },
-        { list: nft, listName: "nft" },
-        { list: f2p, listName: "f2p" },
-        { list: p2e, listName: "p2e" },
-    ];
-    const [isNew, setIsNew] = React.useState(false);
-    // React.useEffect(() => {
-    //     if (isNew) history.push('/new-blockchaingames');
+  const [searchQuery, setSearchQuery] = useState("");
 
-    //     // if (!isNew) history.push('/blockchaingames');
-    // }, [history, isNew]);
+  const { page, sort, direction, is_new, keyword, ...selectedValueList } =
+    sortList;
 
-    useEffect(() => {
-        filterNew();
-    }, [isNew])
+  const dropdownTypes = [
+    { list: category, listName: "category" },
+    { list: platform, listName: "platform" },
+    { list: device, listName: "device" },
+    { list: status, listName: "status" },
+    { list: nft, listName: "nft" },
+    { list: f2p, listName: "f2p" },
+    { list: p2e, listName: "p2e" },
+  ];
+  const [isNew, setIsNew] = useState(false);
 
-    const switchNew = (e) => {
-        setIsNew(e.target.checked);
-       
+  const filterNew = (isNew) => {
+    setIsNew(isNew);
+    //is_new state
+    if (isNew) {
+      let props = {
+        ...sortList,
+        is_new: 1,
+        platform: "All-Blockchain",
+        category: "All-Genre",
+        status: "All-Status",
+        device: "All-Device",
+        nft: "All-NFT",
+        f2p: "All-FreeToPlay",
+        p2e: "All-PlayToEarn",
+        page: 1,
+        sort: "total_rank",
+        direction: "asc",
+        keyword: "",
+      };
+      dispatch(fetchGamesFilter(props));
+    //cancel is_new state
+    } else {
+      let props = {
+        ...sortList,
+        is_new: "",
+        platform: "All-Blockchain",
+        category: "All-Genre",
+        status: "All-Status",
+        device: "All-Device",
+        nft: "All-NFT",
+        f2p: "All-FreeToPlay",
+        p2e: "All-PlayToEarn",
+        page: 1,
+        sort: "total_rank",
+        direction: "asc",
+        keyword: "",
+      };
+      dispatch(fetchGamesFilter(props));
     }
+  };
 
-    const filterNew = () =>{
-        if (isNew) {
-            dispatch(fetchNewGameAsync());
-        } else {
-            dispatch(fetchGamesRowsAsync());
-        }
-    }
+  const searchItem = () => {
+    let props = {
+      ...sortList,
+      is_new: "",
+      platform: "All-Blockchain",
+      category: "All-Genre",
+      status: "All-Status",
+      device: "All-Device",
+      nft: "All-NFT",
+      f2p: "All-FreeToPlay",
+      p2e: "All-PlayToEarn",
+      page: 1,
+      sort: "total_rank",
+      direction: "asc",
+      keyword: searchQuery
+    };
+    dispatch(fetchGamesFilter(props));
+    setSearchQuery("");
+  }
 
+  const redirect = (props) => {
+    dispatch(fetchGamesFilter({ ...props, page: 1 }));
+  };
 
-    return (
-        <div className="orderbar" style={{ marginBottom: '1rem', visibility: 'visible' }}>
-            {
-                dropdownTypes && dropdownTypes.length > 0
-                && dropdownTypes.map((type, index) => <Dropdown key={index} type={type.list} listName={type.listName} />)
-            }
+  //dropdown select
+  const onDropDownItemChange = (changedData) => {
+    // setState(changedData);
+    redirect(changedData);
+  };
 
-            <div div className="order-new" >
-                <div className="inner-order-new">
-                    <span className="order-new-new">New</span>
-                    <label className="switch">
-                        <input type="checkbox" aria-label="NewEntries" name="newList" checked={isNew} onChange={(e)=> switchNew(e)} />
-                        <span className="slider round"></span>
-                    </label>
-                </div>
-            </div>
+  //dropdown selectedvalue change by clicking game items
+  let _cat = selectedValueList.category;
+  let _nft = selectedValueList.nft;
+  let _f2p = selectedValueList.f2p;
+  let _p2e = selectedValueList.p2e;
+
+  const arraySelectedValueList = _.values({...selectedValueList, category: categoryMatch[_cat], nft: nftMatch[_nft], f2p: f2pMatch[_f2p], p2e: p2eMatch[_p2e]});
+
+  return (
+    <div
+      className="orderbar"
+      style={{ marginBottom: "1rem", visibility: "visible" }}
+    >
+      {dropdownTypes &&
+        dropdownTypes.length > 0 &&
+        dropdownTypes.map((type, index) => {
+          return (
+            <Dropdown
+              key={index}
+              type={type.list}
+              listName={type.listName}
+              state={sortList}
+              selectedValue={arraySelectedValueList[index]}
+              onChange={(changedData) => onDropDownItemChange(changedData)}
+            />
+          );
+        })}
+
+      <div div className="order-new">
+        <div className="inner-order-new">
+          <span className="order-new-new">New</span>
+          <label className="switch">
+            <input
+              type="checkbox"
+              aria-label="NewEntries"
+              name="newList"
+              checked={isNew}
+              onChange={(e) => filterNew(e.target.checked)}
+            />
+            <span className="slider round"></span>
+          </label>
         </div>
-    );
+      </div>
+      <div className="dropdown search">
+
+        <input placeholder="Search" autoComplete="off" value={searchQuery} className="form-control mr-sm-2 fulltextsearch" name="fulltextsearch" type="text" onChange={(e)=>setSearchQuery(e.target.value)}/>
+        <button className="search-button my-2 my-sm-0" aria-label="Search" onClick={()=>searchItem()}><i class="fas fa-search"></i></button>
+
+      </div>
+    </div>
+  );
 };
 
 export default Orderbar;

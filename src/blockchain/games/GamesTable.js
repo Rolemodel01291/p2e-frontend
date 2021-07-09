@@ -11,13 +11,6 @@ import {
     Paper,
 } from '@material-ui/core';
 
-
-import {
-    fetchGamesAsync,
-    fetchGamesRowsAsync,
-    selectGame,
-    
-} from './gamesSlice';
 import Head from './table/Head';
 import Body from './table/Body';
 import { SelectionState } from '@devexpress/dx-react-chart';
@@ -33,18 +26,15 @@ const useStyles = makeStyles((theme) => ({
 export default function GamesTable() {
     const classes = useStyles();
     const dispatch = useDispatch();
+    const total_count = useSelector((state)=>state.games.total_count);
     const rows = useSelector((state)=>state.games.rows);
     const columns = useSelector((state)=>state.games.columns);
 
     // const [columns, setColumns] = useState([]);
     // const [rows, setRows] = useState([]);
 
-    useEffect(() => {
-        dispatch(fetchGamesAsync());
-        dispatch(fetchGamesRowsAsync());
-    }, [dispatch])
+    
 
-    console.log("-----------------", rows);    
 
     return (
         <TableContainer component={Paper}>

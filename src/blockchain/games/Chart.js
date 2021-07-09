@@ -6,26 +6,20 @@ import {
 } from "@devexpress/dx-react-chart-material-ui";
 
 
-import { bitcoin as data } from "../../data/data-vizualization";
+const Graph = ({data}) => {
+    // const [chartData] = data;
+    return (
+        <>
+        {data? <Paper>
+            <Chart data={data} height="100" width="100">
+               <LineSeries valueField="price" argumentField="date" />
+           </Chart>
+        </Paper> : 'No Data'}
+         
+        </>
+    );
+}; 
 
-export default class Demo extends React.PureComponent {
-    constructor(props) {
-        super(props);
+export default Graph;
 
-        this.state = {
-            data
-        };
-    }
-
-    render() {
-        const { data: chartData } = this.state;
-
-        return (
-            <Paper>
-                <Chart data={chartData} height="100" width="100">
-                    <LineSeries valueField="price" argumentField="date" />
-                </Chart>
-            </Paper>
-        );
-    }
-}
+  

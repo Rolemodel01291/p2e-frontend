@@ -1,57 +1,39 @@
-import React from 'react';
+import React from "react";
+import Slider from "infinite-react-carousel";
 
-const ImageSlider = ({ desc }) => {
-    return (
-        <>
-            <div className={`lazy detail dapp_image_container loaded`} data-loader="carouselLoader">
-                <div className={`init-loader-container`}>
-                    <img class="init-loader" src="https://playtoearn.net/img/general/preloader.png" alt="loading" data-nsfw-filter-status="sfw" style={{ visibility: 'visible'}}/>
-                </div>    
-                <div className="owl-carousel owl-theme owl-loaded owl-drag">
-                    <div className="owl-stage-outer owl-height" style={{ height: '150px' }}>
-                        <div className="owl-stage" style={{ transform: 'translate3d(-1064px, 0px, 0px)', transition: 'all 2s ease 0s', width: '2662px'}}>
-                            <div className="owl-item active" style={{width: '127.45px', margin: '0, 0, 50px, 0'}}>
-                                <div className="item">
-                                    <a href="https://playtoearn.net/img/dapp/lost-relics/lost-relics-SAzI5WvMgYl8.png" data-gallery="dapp-gallery" data-toggle="lightbox" data-nsfw-filter-status="swf">
-                                        <img loading="lazy" className="owl-lazy" data-src="https://playtoearn.net/img/dapp/lost-relics/lost-relics-SAzI5WvMgYl8.png" alt="Lost Relics" src="https://playtoearn.net/img/dapp/lost-relics/lost-relics-SAzI5WvMgYl8.png" data-nsfw-filter-status="sfw" style={{ visibility: 'visible', opacity: '1'}}/>
-                                    </a>
-                                </div>    
-                            </div>
-                            <div className="owl-item active" style={{width: '127.45px', margin: '0, 0, 50px, 0'}}>
-                                <div className="item">
-                                    <a href="https://playtoearn.net/img/dapp/lost-relics/lost-relics-SAzI5WvMgYl8.png" data-gallery="dapp-gallery" data-toggle="lightbox" data-nsfw-filter-status="swf">
-                                        <img loading="lazy" className="owl-lazy" data-src="https://playtoearn.net/img/dapp/lost-relics/lost-relics-SAzI5WvMgYl8.png" alt="Lost Relics" src="https://playtoearn.net/img/dapp/lost-relics/lost-relics-SAzI5WvMgYl8.png" data-nsfw-filter-status="sfw" style={{ visibility: 'visible', opacity: '1'}}/>
-                                    </a>
-                                </div>    
-                            </div>
-                            <div className="owl-item active" style={{width: '127.45px', margin: '0, 0, 50px, 0'}}>
-                                <div className="item">
-                                    <a href="https://playtoearn.net/img/dapp/lost-relics/lost-relics-SAzI5WvMgYl8.png" data-gallery="dapp-gallery" data-toggle="lightbox" data-nsfw-filter-status="swf">
-                                        <img loading="lazy" className="owl-lazy" data-src="https://playtoearn.net/img/dapp/lost-relics/lost-relics-SAzI5WvMgYl8.png" alt="Lost Relics" src="https://playtoearn.net/img/dapp/lost-relics/lost-relics-SAzI5WvMgYl8.png" data-nsfw-filter-status="sfw" style={{ visibility: 'visible', opacity: '1'}}/>
-                                    </a>
-                                </div>    
-                            </div>
-                            <div className="owl-item active" style={{width: '127.45px', margin: '0, 0, 50px, 0'}}>
-                                <div className="item">
-                                    <a href="https://playtoearn.net/img/dapp/lost-relics/lost-relics-SAzI5WvMgYl8.png" data-gallery="dapp-gallery" data-toggle="lightbox" data-nsfw-filter-status="swf">
-                                        <img loading="lazy" className="owl-lazy" data-src="https://playtoearn.net/img/dapp/lost-relics/lost-relics-SAzI5WvMgYl8.png" alt="Lost Relics" src="https://playtoearn.net/img/dapp/lost-relics/lost-relics-SAzI5WvMgYl8.png" data-nsfw-filter-status="sfw" style={{ visibility: 'visible', opacity: '1'}}/>
-                                    </a>
-                                </div>    
-                            </div>
-                            <div className="owl-item active" style={{width: '127.45px', margin: '0, 0, 50px, 0'}}>
-                                <div className="item">
-                                    <a href="https://playtoearn.net/img/dapp/lost-relics/lost-relics-SAzI5WvMgYl8.png" data-gallery="dapp-gallery" data-toggle="lightbox" data-nsfw-filter-status="swf">
-                                        <img loading="lazy" className="owl-lazy" data-src="https://playtoearn.net/img/dapp/lost-relics/lost-relics-SAzI5WvMgYl8.png" alt="Lost Relics" src="https://playtoearn.net/img/dapp/lost-relics/lost-relics-SAzI5WvMgYl8.png" data-nsfw-filter-status="sfw" style={{ visibility: 'visible', opacity: '1'}}/>
-                                    </a>
-                                </div>    
-                            </div>
-                            
-                        </div>
-                    </div>    
-                </div>   
-            </div>     
-        </>
-    );
+const ImageSlider = ({ images }) => {
+  return (
+    <>
+      {/* <Slider
+        nextArrow={<button type="button">{"->"}</button>}
+        prevArrow={<button type="button">{"<-"}</button>}
+        slidesToShow={1}
+      >
+        {false
+          ? []
+          : Array.from(new Array(8)).map((_, i) => (
+              <div className="container_image">
+                <div
+                  className="image_item"
+                  key={i}
+                  style={{
+                    height: 200,
+                    // background: "url(https://placeimg.com/380/200/nature)"
+                  }}
+                >
+                  {images &&
+                    images.length > 0 &&
+                    JSON.parse(images).map((image, index) => (
+                      <>
+                        <img src={image.image} alt={image.name} />
+                      </>
+                    ))}
+                </div>
+              </div>
+            ))}
+      </Slider> */}
+    </>
+  );
 };
 
 export default ImageSlider;

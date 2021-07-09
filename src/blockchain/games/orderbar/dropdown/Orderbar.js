@@ -10,6 +10,7 @@ import '../../styles/Games.css';
 const Orderbar = () => {
     const history = useHistory();
     const [isNew, setIsNew] = React.useState(false);
+    
 
     React.useEffect(() => {
         if (isNew) history.push('/new-blockchaingames');

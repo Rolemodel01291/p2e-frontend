@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import {
-    fetchGameDetailAsync,
+    fetchDetailData,
 } from '../../games/gamesSlice';
 import Detail from './Detail';
 import Toppages from "../Toppages";
@@ -25,17 +25,12 @@ const GameDetails = () => {
     const classes = useStyles();
     const dispatch = useDispatch();
     const routeParams = useParams();
+    const detail = useSelector((state)=>state.games.detail)
 
-    const [detail, setDetail] = useState([]);
     useEffect(() => {
-        fetchData(routeParams.id);	
+        dispatch(fetchDetailData(routeParams.id));	
 	}, [dispatch]);
     
-    const fetchData = async (id) => {
-        const result = await dispatch(fetchGameDetailAsync(id));
-        setDetail(result.payload[0]);
-        // setColumns(resColumns.payload);
-    };
     return (
         <div className="details">
             <div className={classes.container}>
