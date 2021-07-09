@@ -13,7 +13,6 @@ const useStyles = makeStyles((theme) => ({
 
 const BottomPagination = () => {
   const dispatch = useDispatch();
-  const classes = useStyles();
   const total_count = useSelector((state)=>state.games.total_count);
   // const page = useSelector((state)=>state.games.page);
   const sortList = useSelector((state) => state.games.sortList);
@@ -31,15 +30,15 @@ const BottomPagination = () => {
     <div className="bottom-pagination">
       <ul className="pagination" role="navigation">
         <li className={sortList.page == 1?"page-item disabled": "page-item"} aria-disabled="true">
-          <a href="#" className="page-link " data-nsfw-filter-status="swf"  rel="previous" onClick={()=> handlePrevious()}>
+          <a href="javascript:void(0)" className="page-link" data-nsfw-filter-status="swf"  onClick={()=> handlePrevious()}>
             « Previous 50
           </a>
         </li>
-        <li className= {sortList.page == Math.floor(total_count / 50) + 1 ?"page-item disabled": "page-item"}>
+        <li className= {sortList.page === Math.floor(total_count / 50) + 1 ?"page-item disabled": "page-item"}>
           <a
             className="page-link"
             rel="next"
-            href = "#"
+            href = "javascript:void(0)"
             data-nsfw-filter-status="swf"
             onClick = {() => handleNext()}
           >
