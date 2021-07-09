@@ -98,7 +98,8 @@ const Navbar = () => {
                     type="button"
                     onClick={handleModeChange}
                     style={{ display: "block" }}>
-                    <i className="far fa-moon"></i>
+                        {mode==="light"?<i className="far fa-moon"></i>:<i className="far fa-sun"></i>}
+                    
                 </button>
             </div>
         </nav>

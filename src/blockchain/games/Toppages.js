@@ -1,9 +1,9 @@
 import React from 'react';
 import './styles/Default.css';
 
-const Toppages = ({ classToRemove }) => {
-    const fadeOut = () => {
-        var fadeTarget = document.getElementsByClassName(classToRemove)[0];
+const Toppages = () => {
+    const fadeOut = (className) => {
+        var fadeTarget = document.getElementsByClassName(className)[0];
         var fadeEffect = setInterval(function () {
             if (!fadeTarget.style.opacity) {
                 fadeTarget.style.opacity = 1;
@@ -29,7 +29,7 @@ const Toppages = ({ classToRemove }) => {
                     ></iframe>
                     <div className="coinzilla_iframe_link"></div>
                 </div>
-                <div className="banner_advertise_toppage_close" onClick={() => fadeOut('toppagead')}>
+                <div className="detail_banner_advertise_toppage_close" onClick={() => fadeOut('toppagead')}>
                     <i className="fas fa-times"></i>
                 </div>
             </div>

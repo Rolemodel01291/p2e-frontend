@@ -315,8 +315,8 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 .dropdown.search input {
-  padding-top: 4px;
-  padding-bottom: 6px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   border: 1px solid transparent;
   border-bottom: 0;
   border-radius: 0;

@@ -388,7 +388,17 @@ select {
 }
 .banner_advertise_toppage_close {
   color: #fff;
-  padding: 5px 10px;
+  padding: 20px 25px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 11111;
+  cursor: pointer;
+}
+
+.detail_banner_advertise_toppage_close{
+  color: #fff;
+  padding: 40px 25px;
   position: absolute;
   top: 0;
   right: 0;
@@ -398,6 +408,8 @@ select {
 .banner_advertise_toppage_close i {
   color: #fff;
 }
+
+
 .toppagetextad {
   background-color: #333;
   text-align: center;

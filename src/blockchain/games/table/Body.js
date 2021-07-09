@@ -44,15 +44,12 @@ const Body = ({ rows }) => {
   const redirect = (props) => {
     dispatch(fetchGamesFilter(props));
   };
-
-  
   
   return (
     <>
       {" "}
       {rows.map((row, index) => {
         return <TableRow key={row.id}>
-         
           <TableCell component="th" scope="row" style={{padding : '0'}}>
             {sortList.is_new === 1 && row.id !== 13 ? <span className="new"  data-nsfw-filter-status="swf">New!</span>:<></>}
             <div>{50 * (sortList.page - 1) + index + 1}</div>

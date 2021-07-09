@@ -9,7 +9,6 @@ export default function api() {
 
     const BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
-  
     return {
       post: async (path, body) => {
         const response = await fetch(BASE_URL + `api/${path}`, options('POST', body))
