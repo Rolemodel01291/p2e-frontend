@@ -626,6 +626,7 @@
 .detail_profilepic{
   float: left;
   margin-top: 15px;
+  margin-right: 10px;
 }
 
 .detail_profilepic > img {
@@ -1060,8 +1061,7 @@
     display: none;
   }
   .headline-dapp {
-    padding-top: 0;
-    margin-top: -185px;
+    
   }
   .headline-dapp h1 {
     font-size: 22px;
@@ -1095,7 +1095,7 @@
   .detail .updated {
     margin-top: 0;
     padding-left: 0;
-    margin-bottom: 150px;
+    /* margin-bottom: 150px; */
   }
 }
 @media (max-width: 550px) {
