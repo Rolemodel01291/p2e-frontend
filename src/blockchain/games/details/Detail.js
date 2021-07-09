@@ -60,7 +60,7 @@ const Detail = ({ detail }) => {
             <div className="row">
               <div className="col-12 col-sm-12 col-md-9 col-lg-8">
                 <div>
-                  <div className="dapp_profilepic">
+                  <div className="detail_profilepic">
                     <img
                       loading="lazy"
                       src={detail.profile_pic}

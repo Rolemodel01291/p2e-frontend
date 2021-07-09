@@ -611,9 +611,24 @@
 }
 .dapp_profilepic {
   float: left;
-  margin-top: 15px
+  margin-top: 15px;
+  min-width: 50px;
 }
 .dapp_profilepic > img {
+  background-color: #fff;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;
+  border-radius: 5px !important;
+  box-shadow: 0 0 7px #bfbfbf;
+}
+
+.detail_profilepic{
+  float: left;
+  margin-top: 15px;
+}
+
+.detail_profilepic > img {
   background-color: #fff;
   width: 100px;
   height: 100px;
@@ -621,6 +636,7 @@
   border-radius: 5px !important;
   box-shadow: 0 0 7px #bfbfbf;
 }
+
 .nav-tabs > .nav-item > a {
   padding: 10px 15px;
 }
