@@ -3,6 +3,7 @@ export default function api() {
       method,
       headers: {
         'Content-Type': 'application/json',
+        
       },
       body: JSON.stringify(body),
     })
