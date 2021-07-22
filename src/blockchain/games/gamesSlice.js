@@ -25,10 +25,12 @@ export function fetchDetailData(id) {
 export function fetchGamesFilter(sortList) {
   return async (dispatch) => {
     try {
+     
       dispatch(gameSlice.actions.setSortList(sortList));
       const response = await fetchFilterGames(sortList);
       dispatch(gameSlice.actions.fetchGamesRows(response));
     } catch (error) {
+      
       console.log(error);
     }
   };

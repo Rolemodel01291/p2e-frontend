@@ -21,9 +21,9 @@ body {
   line-height: 1.6;
   background-color: #fff;
   transition: all 0.25s ease-out;
-  font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto,
-    helvetica neue, Arial, sans-serif, apple color emoji, segoe ui emoji,
-    segoe ui symbol;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 body > .container {
   background-color: #fff;
@@ -194,7 +194,7 @@ select {
   height: 27px;
 }
 .socialimg.loaded {
-  background-image: url(../img/general/social/social.png); 
+  background-image: url(../img/general/social/social.png);
 }
 .website.socialimg {
   background-position: -8px -4px;
@@ -396,7 +396,7 @@ select {
   cursor: pointer;
 }
 
-.detail_banner_advertise_toppage_close{
+.detail_banner_advertise_toppage_close {
   color: #fff;
   padding: 40px 25px;
   position: absolute;
@@ -408,7 +408,6 @@ select {
 .banner_advertise_toppage_close i {
   color: #fff;
 }
-
 
 .toppagetextad {
   background-color: #333;

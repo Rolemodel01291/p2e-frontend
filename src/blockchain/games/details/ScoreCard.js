@@ -19,6 +19,7 @@ const ScoreCard = ({ p2e_score, p2e_score_data, updated_at }) => {
     <div className="scorecard">
       <Grid container>
         <Grid item xl={5}>
+
           <div>
             PlayToEarn Score
             <LightTooltip
@@ -28,6 +29,7 @@ const ScoreCard = ({ p2e_score, p2e_score_data, updated_at }) => {
               <i className="far fa-question-circle"></i>
             </LightTooltip>
           </div>
+          
           <div>
             {p2e_score &&
               p2e_score.length > 0 &&

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const RelatedGamePanel = ({related_game}) => {
   return (
@@ -14,7 +15,11 @@ const RelatedGamePanel = ({related_game}) => {
           JSON.parse(related_game).map((related_game, index) => (
             <>
             <li>
-              <a href={related_game.link} data-nsfw-filter-status="swf">
+            <Link
+              to={`/blockchaingame/${related_game.link.split('/')[3]}`}
+              data-nsfw-filter-status="swf"
+            >
+              
                 <div className="related_dapp_img">
                   <img
                     loading="lazy"
@@ -25,7 +30,7 @@ const RelatedGamePanel = ({related_game}) => {
                   />
                   <span data-nsfw-filter-status="swf">{related_game.name}</span>
                 </div>
-              </a>
+              </Link>
             </li>
             </>
           ))}

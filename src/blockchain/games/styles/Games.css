@@ -344,6 +344,11 @@ input:checked + .slider:before {
 .dapp_name {
   padding-left: 10px;
 }
+
+.text-xs{
+  font-size: 0.6rem !important;
+}
+
 .dapp_name span:first-of-type {
   position: relative;
   top: 2px;
@@ -577,6 +582,7 @@ input:checked + .slider:before {
   display: inline-block;
   margin-right: 5px;
   width: 60px;
+  border-radius: 5px;
 }
 .progress-bar {
   height: 100%;

@@ -50,12 +50,12 @@ const Body = ({ rows }) => {
       {" "}
       {rows.map((row, index) => {
         return <TableRow key={row.id}>
-          <TableCell component="th" scope="row" style={{padding : '0'}}>
+          <TableCell component="td" scope="row" style={{padding : '0', width: '50px', verticalAlign: 'middle', padding: '8px, 10px', fontWeight: '600', fontFamily: 'inherit'}}>
             {sortList.is_new === 1 && row.id !== 13 ? <span className="new"  data-nsfw-filter-status="swf">New!</span>:<></>}
             <div>{50 * (sortList.page - 1) + index + 1}</div>
             
           </TableCell>
-          <TableCell component="th" scope="row" style={{padding: '0'}}>
+          <TableCell component="td" scope="row" style={{padding: '0', width: '250px', verticalAlign: 'middle', padding: '8px, 10px'}}>
             <Link
               to={`/blockchaingame/${row?.id}`}
               className="dapp_detaillink"
@@ -78,17 +78,17 @@ const Body = ({ rows }) => {
               <div
                 className={`${styles.dapp_name} ${mode} === 'dark' && ${classes.darkHeaderbar} `}
               >
-                <span>{row?.name}</span>
+                <span style={{fontSize: '16px'}}>{row?.name}</span>
                 <span>{row?.short_desc}</span>
               </div>
             </Link>
           </TableCell>
-          <TableCell component="th" scope="row">
+          <TableCell component="td" scope="row" style = {{width: '104.672px', verticalAlign: 'middle', padding: '8px, 10px', fontWeight: '600'}}>
             {row?.genres && row?.genres.length > 0 && (JSON.parse(row?.genres)).map((genre, index) => (
               <div key={index}>
                 <span
                   
-                  className={`text-right font-bold text-xs uppercase block whitespace-nowrap no-underline ${styles.dapp_name}`}
+                  className={`text-right text-xs uppercase block whitespace-nowrap no-underline ${styles.dapp_name}`}
                   onClick={() => handleChange(genre, "category")}
                 >
                   {genre.toUpperCase()}
@@ -96,9 +96,9 @@ const Body = ({ rows }) => {
               </div>
             ))}
           </TableCell>
-          <TableCell component="th" scope="row">
+          <TableCell component="td" scope="row" style = {{width: '100px', verticalAlign: 'middle', padding: '8px, 10px', fontWeight: '600', textAlign: 'right'}}>
             {row?.block_chains && row?.block_chains.length > 0 && (JSON.parse(row?.block_chains)).map((blockchain, index) => (
-              <div className="text-right" key={index}>
+              
                 <LightTooltip title={`${blockchain}`} placement="top">
                   <span
                     style={{
@@ -112,13 +112,13 @@ const Body = ({ rows }) => {
                     ></div>
                   </span>
                 </LightTooltip>
-              </div>
+              
             ))}
           </TableCell>
-          <TableCell component="th" scope="row">
+          <TableCell component="td" scope="row" style = {{width: '100px', verticalAlign: 'middle', textAlign: 'right', fontWeight: '600'}}>
             {row?.devices && row?.devices.length > 0 && (JSON.parse(row?.devices)).map((device, index) => (
-              <LightTooltip title={`${device}`} placement="top" key={index}>
-                <span style={{ padding: "0px 4px", fontSize: "23px" }}>
+              <LightTooltip title={`${device}`} placement="top">
+                <span style={{ fontSize: "23px" }}>
                   <div
                     className={`lazy deviceimg ${device} loaded`}
                     data-loader="bgLoader"
@@ -128,7 +128,7 @@ const Body = ({ rows }) => {
               </LightTooltip>
             ))}
           </TableCell>
-          <TableCell component="th" scope="row">
+          <TableCell component="td" scope="row" style = {{width: '80.5469px', verticalAlign: 'middle', padding: '8px, 10px', fontWeight: '600'}}>
             <LightTooltip title={`${row?.status}`} placement="top">
               <span
                
@@ -161,7 +161,6 @@ const Body = ({ rows }) => {
                                     : ""
                                 }-400
                                 font-bold 
-                                px-2
                                 py-0
                                 rounded 
                                 uppercase 
@@ -177,7 +176,7 @@ const Body = ({ rows }) => {
               </span>
             </LightTooltip>
           </TableCell>
-          <TableCell component="th" scope="row">
+          <TableCell component="td" scope="row" style = {{width: '65px', verticalAlign: 'middle', padding: '8px, 10px', fontWeight: '600'}}>
             {row?.nft && row?.nft.length > 0 && (JSON.parse(row?.nft)).map((nft, index) => (
               <LightTooltip
                 title={`${
@@ -191,7 +190,7 @@ const Body = ({ rows }) => {
                   style={{
                     fontSize: "10px",
                     border: "1px solid #00000052",
-                    backgroundColor: row.nft === "YES" ? "#33afc3" : "#ff5151",
+                    backgroundColor: row.nft === "YES" ? "#ff5151" : "#33afc3",
                   }}
                   onClick={() => handleChange(nft, "nft")}
                 >
@@ -200,7 +199,7 @@ const Body = ({ rows }) => {
               </LightTooltip>
             ))}
           </TableCell>
-          <TableCell component="th" scope="row">
+          <TableCell component="td" scope="row" style = {{width: '73.9688px', verticalAlign: 'middle', padding: '8px, 10px', fontWeight: '600'}}>
             {row?.f2p && row?.f2p.length > 0 && (JSON.parse(row?.f2p)).map((f2p, index) => (
               <LightTooltip
                 title={`${
@@ -229,7 +228,7 @@ const Body = ({ rows }) => {
               </LightTooltip>
             ))}
           </TableCell>
-          <TableCell component="th" scope="row">
+          <TableCell component="td" scope="row" style = {{width: '80px', verticalAlign: 'middle', padding: '8px, 10px', fontWeight: '600'}}>
             {row?.p2e && row?.p2e.length > 0 && (JSON.parse(row?.p2e)).map((p2e, index) => (
               <div className="border-1" key={index}>
                 <LightTooltip title={`${p2e} Play-To-Earn`} placement="top">
@@ -250,10 +249,10 @@ const Body = ({ rows }) => {
               </div>
             ))}
           </TableCell>
-          <TableCell component="th" scope="row">
+          <TableCell component="td" scope="row" style = {{width: '105px', verticalAlign: 'middle', padding: '8px, 10px', fontWeight: '600'}}>
             <P2eScore data={row?.p2e_score && row?.p2e_score.length > 0 && (JSON.parse(row?.p2e_score))}/>
           </TableCell>
-          <TableCell component="th" scope="row">
+          <TableCell component="td" scope="row" style = {{width: '105px', verticalAlign: 'middle', padding: '8px, 10px', fontWeight: '600'}}>
             <div
               className="dailychangepercentage"
               data-nsfw-filter-status="swf"
@@ -264,7 +263,7 @@ const Body = ({ rows }) => {
               {row?.social_24h && row?.social_24h.length> 0 && (JSON.parse(row?.social_24h)).percent}
             </div>
           </TableCell>
-          <TableCell component="th" scope="row">
+          <TableCell component="td" scope="row" style = {{width: '110.5px', verticalAlign: 'middle', padding: '8px, 10px', fontWeight: '600'}}>
             <Chart data = {(row.social_7d ? JSON.parse(row.social_7d) : [])}/>
           </TableCell>
         </TableRow>

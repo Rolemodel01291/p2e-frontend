@@ -18,6 +18,7 @@ function App() {
       createMuiTheme({
         palette: {
           type: mode,
+          fontFamily: `apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"`,
           primary: {
             main: mode === "dark" ? "#e8e8e8" : "#3b3b3b",
             backgroundColor: mode === "dark" ? "#212121" : "#fff",

@@ -4,6 +4,7 @@ import { withStyles } from "@material-ui/core/styles";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { fetchGamesFilter } from "../gamesSlice";
+import { transform } from "lodash";
 
 const LightTooltip = withStyles((theme) => ({
   tooltip: {
@@ -19,8 +20,8 @@ const GameService = ({ nft, p2e, f2p }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   let sortList = {
-    platform: "All-Blockchain",
     category: "All-Genre",
+    platform: "All-Blockchain",
     device: "All-Device",
     status: "All-Status",
     nft: "All-NFT",
@@ -114,6 +115,11 @@ const GameService = ({ nft, p2e, f2p }) => {
                     fontSize: "10px",
                     border: "1px solid #00000052",
                     backgroundColor: "#33afc3",
+                    padding:  "0 7px",
+                    margin: "3px",
+                    color: "#fff",
+                    fontWeight : "700",
+                    borderRadius: "3px"
                   }}
                   onClick={() => handleChange(p2e, "p2e")}
                 >

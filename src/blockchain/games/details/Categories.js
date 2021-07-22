@@ -7,8 +7,8 @@ const Categories = ({ categories }) => {
   const dispatch = useDispatch();
   const history = useHistory();
    let sortList = {
-    platform: "All-Blockchain",
     category: "All-Genre",
+    platform: "All-Blockchain",
     device: "All-Device",
     status: "All-Status",
     nft: "All-NFT",

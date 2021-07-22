@@ -46,7 +46,7 @@ const Head = ({ columns }) => {
     
   };
 
-
+  
   return (
     <>
       <TableCell>#</TableCell>
@@ -55,7 +55,7 @@ const Head = ({ columns }) => {
         columns.map((column) => {
           return (
             <TableCell
-              key={column?.id}
+              key={column?.id} style={{padding: column?.padding, textAlign: column?.textAlign, fontFamily: 'inherit'}}
               className={`whitespace-nowrap bold ${
                 column.name === "Genre" ? "right" : ""
               }`}
